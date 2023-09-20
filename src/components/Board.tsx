@@ -1,12 +1,12 @@
 import { Square } from "./Square";
 
 interface BoardProps {
-  heigth: number;
+  height: number;
   width: number;
 }
 
-const Board = ({ heigth, width }: BoardProps) => {
-  const emptyBoard: void[][] = Array.from({ length: heigth }, () =>
+const Board = ({ height, width }: BoardProps) => {
+  const emptyBoard: void[][] = Array.from({ length: height }, () =>
     Array.from({ length: width })
   );
   return (
@@ -14,7 +14,7 @@ const Board = ({ heigth, width }: BoardProps) => {
       {emptyBoard.map((rows, x) => (
         <div className="flex grid-rows-6 gap-1" key={x}>
           {rows.map((square, y) => (
-            <Square key={`${x}${y}`} />
+            <Square key={`${x}${y}`} value={`${x}, ${y}`} />
           ))}
         </div>
       ))}
